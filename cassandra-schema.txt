@@ -1,0 +1,12 @@
+create keyspace DemoKeyspace;
+use DemoKeyspace;
+
+create column family Images with
+  comparator = UTF8Type and
+  column_metadata =
+  [
+    {column_name: created_at, validation_class: UTF8Type},
+    {column_name: content, validation_class: UTF8Type},
+    {column_name: content_type, validation_class: UTF8Type},
+    {column_name: size, validation_class: UTF8Type}
+  ];
